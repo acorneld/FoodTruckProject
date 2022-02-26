@@ -11,25 +11,29 @@ public class FoodTruckApp {
 
 		for (int i = 0; i < truckArray.length; i++) {
 
-			FoodTruck ft1 = new FoodTruck();
+			FoodTruck newFoodTruck = new FoodTruck();
 			System.out.println("Please enter the name of the Foodtruck: ");
 			String truckName = kb.nextLine();
 			if (truckName.equals("quit")) {
-				break;
+				continue;
 
 			} else {
-				ft1.setFoodTruckName(truckName);
-			}
+			
+				newFoodTruck.setFoodTruckName(truckName);
 			System.out.println("Please enter the type of food served: ");
 			String foodTypeName = kb.nextLine();
-			ft1.setFoodType(foodTypeName);
+			newFoodTruck.setFoodType(foodTypeName);
 			System.out.println("Please enter a rating of 1-10 ");
 			int foodTruckRatingName = kb.nextInt();
 			System.out.println("");
-			ft1.setFoodTruckRating(foodTruckRatingName);
+			newFoodTruck.setFoodTruckRating(foodTruckRatingName);
 
-			String ft1Data = ft1.toString();
-			ft1.displayFoodTruck(ft1Data);
+			String ft1Data = newFoodTruck.toString();
+			newFoodTruck.displayFoodTruck(ft1Data);
+			
+			truckArray[i] = newFoodTruck;
+			System.out.println();
+			}
 		}
 
 		kb.close();
