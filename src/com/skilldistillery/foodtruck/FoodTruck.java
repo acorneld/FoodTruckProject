@@ -1,16 +1,17 @@
 package com.skilldistillery.foodtruck;
-
+import java.util.Scanner;
 public class FoodTruck {
 
-	private static int numericId = 1;
+	private int numericId = 1;
 	private String foodTruckName;
 	private String foodType;
 	private double foodTruckRating;
 	
 	public FoodTruck() {
 }
+	
 	public FoodTruck(int numericId, String foodTruckName, String foodType, double foodTruckRating) {
-		FoodTruck.numericId = numericId;
+		this.numericId = numericId;
 		this.foodTruckName = foodTruckName;
 		this.foodType = foodType;
 		this.foodTruckRating = foodTruckRating;
@@ -20,7 +21,7 @@ public class FoodTruck {
 		return numericId;
 	}
 	public void setNumericId(int numericId) {
-		FoodTruck.numericId = numericId;
+		this.numericId = numericId;
 	}
 	
 	public String getFoodTruckName() {
@@ -40,7 +41,7 @@ public class FoodTruck {
 	public double getFoodTruckRating() {
 		return foodTruckRating;
 	}
-	public void setFoodTruckingRating(double foodTruckRating) {
+	public void setFoodTruckRating(double foodTruckRating) {
 		this.foodTruckRating = foodTruckRating;
 	}
 
