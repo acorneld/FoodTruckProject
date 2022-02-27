@@ -1,22 +1,24 @@
 package com.skilldistillery.foodtruck;
 
-
 public class FoodTruck {
 
-	private static int numericId = 1;
+	private static int numericIdGenerator = 1;
+	private int numericId;
 	private String foodTruckName;
 	private String foodType;
 	private double foodTruckRating;
+	private double averageTotal = 0;
 
 	public FoodTruck() {
 	}
 
 	public FoodTruck(String foodTruckName, String foodType, double foodTruckRating) {
-		FoodTruck.numericId = numericId;
+		this.numericId = numericIdGenerator;
 		this.foodTruckName = foodTruckName;
 		this.foodType = foodType;
 		this.foodTruckRating = foodTruckRating;
-		numericId++;
+		numericIdGenerator++;
+		
 	}
 
 	public int getNumericId() {
@@ -24,14 +26,13 @@ public class FoodTruck {
 	}
 
 	public void setNumericId(int numericId) {
-		FoodTruck.numericId = numericId;
+		this.numericId = numericId;
 	}
 
 	public String getFoodTruckName() {
-		
-			return foodTruckName;
-		}
-	
+
+		return foodTruckName;
+	}
 
 	public void setFoodTruckName(String foodTruckName) {
 		this.foodTruckName = foodTruckName;
@@ -53,15 +54,27 @@ public class FoodTruck {
 		this.foodTruckRating = foodTruckRating;
 	}
 
+	public FoodTruck(double averageTotal) {
+		this.averageTotal = averageTotal;
+	}
+
+	public double getAverageTotal() {
+		return averageTotal;
+	}
+
+	public void setAverageTotal(double averageTotal) {
+		this.averageTotal = averageTotal;
+	}
+
 	public String toString() {
 		String output = "Numeric ID:" + numericId + " Food Truck Name:" + foodTruckName + " Food type:" + foodType
 				+ " Rating:" + foodTruckRating;
 		return output;
 	}
+
 	public void displayFoodTruck() {
 		String truckData = this.toString();
 		System.out.println(truckData);
 	}
-	
-	
+
 }

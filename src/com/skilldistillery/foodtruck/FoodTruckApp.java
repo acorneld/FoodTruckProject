@@ -7,9 +7,9 @@ public class FoodTruckApp {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
-		FoodTruck[] truckArray = new FoodTruck[6];
+		FoodTruck[] truckArray = new FoodTruck[5];
 
-		for (int i = 1; i < truckArray.length; i++) {
+		for (int i = 0; i < truckArray.length; i++) {
 			FoodTruck newFoodTruck = new FoodTruck();
 			System.out.println("Please enter the name of the Foodtruck: ");
 			String foodTruckName = kb.nextLine();
@@ -29,7 +29,7 @@ public class FoodTruckApp {
 		}
 
 		int userInput = 0;
-		while (userInput > 0 && userInput < 5) {
+		while (userInput >= 0 && userInput < 5) {
 
 			System.out.println("\t  MENU OPTIONS");
 			System.out.println("1. List all existing food trucks");
@@ -40,26 +40,44 @@ public class FoodTruckApp {
 			if (userInput == 4) {
 				break;
 			} else if (userInput == 3) {
-				int count = 0;
-				double topRating = truckArray[0].getFoodTruckRating();
+				
+				FoodTruck topRating = truckArray[0];
+				
 				for (int x = 0; x < truckArray.length; x++) {
-					if (truckArray[x].getFoodTruckRating() > topRating) {
-						topRating = truckArray[x].getFoodTruckRating();
-						count = x;
+					if (truckArray[x] != null) {
+						
+					
+					if (truckArray[x].getFoodTruckRating() > topRating.getFoodTruckRating()) {
+						topRating = truckArray[x];
+					}
 					}
 				}
 
-				System.out.println("The highest rated foodtruck is " + truckArray[count].toString());
+				System.out.println(topRating.toString());
 			}
-		
+
 			else if (userInput == 2) {
-			double averageRating = 0;
-			int count = 0;
+				double averageSum = 0;
+				int count = 0;
 				for (int i = 0; i < truckArray.length; i++) {
-					averageRating += truckArray[i].getFoodTruckRating();
+					if (truckArray[i] == null) {
+						continue;
+					}
+					averageSum += truckArray[i].getFoodTruckRating();
+					count++;
+				}
+				double averageTotal = averageSum / count;
+				System.out.println(averageTotal);
+			} else if (userInput == 1) {
+				for (int x = 0; x < truckArray.length; x++) {
+					if (truckArray[x] == null) {
+						continue;
+					}
+					System.out.println(truckArray[x].toString());
+
 				}
 			}
-		
+
 		}
 
 	}
