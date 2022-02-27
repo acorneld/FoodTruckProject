@@ -11,11 +11,12 @@ public class FoodTruck {
 	public FoodTruck() {
 	}
 
-	public FoodTruck(int numericId, String foodTruckName, String foodType, double foodTruckRating) {
+	public FoodTruck(String foodTruckName, String foodType, double foodTruckRating) {
 		FoodTruck.numericId = numericId;
 		this.foodTruckName = foodTruckName;
 		this.foodType = foodType;
 		this.foodTruckRating = foodTruckRating;
+		numericId++;
 	}
 
 	public int getNumericId() {
@@ -57,8 +58,8 @@ public class FoodTruck {
 				+ " Rating:" + foodTruckRating;
 		return output;
 	}
-	public void displayFoodTruck(String output) {
-		String truckData = toString();
+	public void displayFoodTruck() {
+		String truckData = this.toString();
 		System.out.println(truckData);
 	}
 	
