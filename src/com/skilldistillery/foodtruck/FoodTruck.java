@@ -18,7 +18,7 @@ public class FoodTruck {
 		this.foodType = foodType;
 		this.foodTruckRating = foodTruckRating;
 		numericIdGenerator++;
-		
+
 	}
 
 	public int getNumericId() {

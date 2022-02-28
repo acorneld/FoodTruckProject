@@ -40,16 +40,15 @@ public class FoodTruckApp {
 			if (userInput == 4) {
 				break;
 			} else if (userInput == 3) {
-				
+
 				FoodTruck topRating = truckArray[0];
-				
+
 				for (int x = 0; x < truckArray.length; x++) {
 					if (truckArray[x] != null) {
-						
-					
-					if (truckArray[x].getFoodTruckRating() > topRating.getFoodTruckRating()) {
-						topRating = truckArray[x];
-					}
+
+						if (truckArray[x].getFoodTruckRating() > topRating.getFoodTruckRating()) {
+							topRating = truckArray[x];
+						}
 					}
 				}
 
